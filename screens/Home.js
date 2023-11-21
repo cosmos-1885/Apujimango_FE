@@ -106,7 +106,7 @@ export const Home = ({ navigation }) => {
               fontWeight: "bold",
             }}
           >
-            >> AI 질문하러 가기
+            AI 질문하러 가기
           </Text>
           <Text
             style={{

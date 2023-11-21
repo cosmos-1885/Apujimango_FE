@@ -7,6 +7,7 @@ import { Iconify } from "react-native-iconify";
 
 import Home from "../screens/Home";
 import Child_Management from "../screens/Child_Management";
+import Information from "../screens/Information";
 import Food_Chatbot from "../screens/Food_Chatbot";
 import Medicine_Analysis1 from "../screens/Medicine_Analysis1";
 import Medicine_Analysis2 from "../screens/Medicine_Analysis2";
@@ -37,6 +38,11 @@ const Home_Stack = () => {
       <StackNavigator.Screen
         name="아이 관리"
         component={Child_Management}
+        options={{ headerShown: false }}
+      />
+      <StackNavigator.Screen
+        name="알림"
+        component={Information}
         options={{ headerShown: false }}
       />
     </StackNavigator.Navigator>
