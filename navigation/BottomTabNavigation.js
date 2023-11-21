@@ -145,6 +145,7 @@ const BottomTabNavigation = () => {
           tabBarIcon: ({ size, color }) => (
             <Iconify icon="ep:bowl" size={size} color={color} />
           ),
+          tabBarHideOnKeyboard: true,
           headerShown: false,
         }}
       />
