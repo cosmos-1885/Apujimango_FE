@@ -29,15 +29,17 @@ export const Home = ({ navigation }) => {
           source={require("../assets/logo.png")}
         />
 
-        <Image
-          style={{
-            width: 20,
-            height: 25,
-            marginTop: 40,
-            marginLeft: 220,
-          }}
-          source={require("../assets/alert.png")}
-        />
+        <TouchableOpacity onPress={() => navigation.navigate("알림")}>
+          <Image
+            style={{
+              width: 20,
+              height: 25,
+              marginTop: 40,
+              marginLeft: 220,
+            }}
+            source={require("../assets/alert.png")}
+          />
+        </TouchableOpacity>
       </View>
 
       <View
