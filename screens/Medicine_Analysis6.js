@@ -81,8 +81,8 @@ export const Medicine_Analysis6 = ({ navigation }) => {
             borderWidth: 1,
             elevation: 10,
             borderColor: "#FDFDFF",
-            borderTopStartRadius: 50,
-            borderTopEndRadius: 50,
+            borderTopStartRadius: 30,
+            borderTopEndRadius: 30,
             backgroundColor: "#FFFFFF",
           }}
         >

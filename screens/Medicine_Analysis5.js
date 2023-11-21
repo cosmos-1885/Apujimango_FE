@@ -81,8 +81,8 @@ export const Medicine_Analysis5 = ({ navigation }) => {
             borderWidth: 1,
             elevation: 10,
             borderColor: "#FDFDFF",
-            borderTopStartRadius: 50,
-            borderTopEndRadius: 50,
+            borderTopStartRadius: 30,
+            borderTopEndRadius: 30,
             backgroundColor: "#FFFFFF",
           }}
         >
@@ -113,7 +113,7 @@ export const Medicine_Analysis5 = ({ navigation }) => {
               style={{
                 marginHorizontal: "30%",
                 color: "#FAA629",
-                marginTop: 15,
+                marginTop: 10,
                 fontWeight: "bold",
                 fontSize: 14,
               }}
@@ -203,7 +203,7 @@ export const Medicine_Analysis5 = ({ navigation }) => {
                 style={{
                   flexDirection: "row",
                   marginLeft: "15.5%",
-                  marginTop: 30,
+                  marginTop: 10,
                   width: 130,
                   height: 35,
                   backgroundColor: "#ECF8F9",
@@ -267,7 +267,7 @@ export const Medicine_Analysis5 = ({ navigation }) => {
                 style={{
                   flexDirection: "row",
                   marginLeft: 8,
-                  marginTop: 30,
+                  marginTop: 10,
                   width: 130,
                   height: 35,
                   backgroundColor: "#ECF8F9",
@@ -397,8 +397,8 @@ export const Medicine_Analysis5 = ({ navigation }) => {
             <View
               style={{
                 width: "80%",
-                marginBottom: 22,
-                marginTop: 50,
+                marginBottom: 25,
+                marginTop: 25,
                 borderColor: "#D3D3D3",
                 marginLeft: 40,
                 borderWidth: 0.3,
@@ -1381,7 +1381,7 @@ export const Medicine_Analysis5 = ({ navigation }) => {
 
             <View style={{ marginLeft: "18%" }}>
               <Text style={{ marginVertical: 3, fontSize: 10 }}>
-                디비 연결~
+                졸음, 현기증, 시야흐릠을 유발할 수 있어요!
               </Text>
             </View>
 
@@ -1414,7 +1414,7 @@ export const Medicine_Analysis5 = ({ navigation }) => {
 
             <View style={{ marginLeft: "18%" }}>
               <Text style={{ marginVertical: 3, fontSize: 10 }}>
-                X 맞나...?
+                질환에 따라 '4mg~48mg' 이내로 복용해야 해요!
               </Text>
             </View>
 
