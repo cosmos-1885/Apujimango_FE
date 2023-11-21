@@ -105,7 +105,7 @@ export const Home = ({ navigation }) => {
               color: "#89D4DA",
             }}
           >
-            >> AI 질문하러 가기
+            AI 질문하러 가기
           </Text>
           <Text
             style={{
@@ -131,40 +131,38 @@ export const Home = ({ navigation }) => {
             borderColor: "#D5D5D540",
           }}
         >
-          <TouchableOpacity onPress={() => navigation.navigate("아이 관리")}>
-            <View>
-              <Text
-                style={{
-                  marginTop: 13,
-                  marginLeft: 20,
-                  fontSize: 18,
-                  fontWeight: "bold",
-                }}
-              >
-                우리 아이를 등록하고,{"\n"}맞춤형 건강관리를 해보세요!
-              </Text>
-            </View>
-            <View
+          <View>
+            <Text
               style={{
-                marginTop: 3,
+                marginTop: 13,
                 marginLeft: 20,
-                flexDirection: "row",
+                fontSize: 18,
+                fontWeight: "bold",
               }}
             >
-              <Text
-                style={{
-                  color: "#D5840C",
-                  fontSize: 14,
-                }}
-              >
-                >> 아이 등록하기
-              </Text>
-              <Image
-                source={require("../assets/bag.png")}
-                style={{ marginLeft: 130, width: 75, height: 75 }}
-              />
-            </View>
-          </TouchableOpacity>
+              우리 아이를 등록하고,{"\n"}맞춤형 건강관리를 해보세요!
+            </Text>
+          </View>
+          <View
+            style={{
+              marginTop: 3,
+              marginLeft: 20,
+              flexDirection: "row",
+            }}
+          >
+            <Text
+              style={{
+                color: "#D5840C",
+                fontSize: 14,
+              }}
+            >
+              아이 등록하기
+            </Text>
+            <Image
+              source={require("../assets/bag.png")}
+              style={{ marginLeft: 130, width: 75, height: 75 }}
+            />
+          </View>
         </View>
 
         <View
