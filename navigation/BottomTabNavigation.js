@@ -163,6 +163,7 @@ const BottomTabNavigation = () => {
           tabBarIcon: ({ size, color }) => (
             <Iconify icon="solar:cat-linear" size={size} color={color} />
           ),
+          tabBarHideOnKeyboard: true,
           headerShown: false,
         }}
       />
