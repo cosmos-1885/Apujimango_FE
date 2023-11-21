@@ -103,6 +103,7 @@ export const Home = ({ navigation }) => {
               marginLeft: 30,
               fontSize: 15,
               color: "#89D4DA",
+              fontWeight: "bold",
             }}
           >
             >> AI 질문하러 가기
@@ -155,6 +156,7 @@ export const Home = ({ navigation }) => {
                 style={{
                   color: "#D5840C",
                   fontSize: 14,
+                  fontWeight: "bold",
                 }}
               >
                 >> 아이 등록하기
@@ -208,7 +210,7 @@ export const Home = ({ navigation }) => {
               <Text
                 style={{
                   marginLeft: 10,
-                  fontSize: 12,
+                  fontSize: 11,
                   color: "#949494",
                 }}
               >
@@ -230,7 +232,7 @@ export const Home = ({ navigation }) => {
               <Text
                 style={{
                   marginLeft: 10,
-                  fontSize: 12,
+                  fontSize: 11,
                   color: "#949494",
                 }}
               >
@@ -249,7 +251,7 @@ export const Home = ({ navigation }) => {
                 <Text
                   style={{
                     marginLeft: 10,
-                    fontSize: 12,
+                    fontSize: 11,
                     color: "#949494",
                   }}
                 >
