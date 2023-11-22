@@ -10,17 +10,20 @@ import {
   TouchableOpacity,
   SafeAreaView,
   TextInput,
+  KeyboardAvoidingView,
 } from "react-native";
+import { color } from "react-native-elements/dist/helpers";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 
 export const AI_Question = () => {
   const [text, setText] = useState("");
-  const [response, setResponse] = useState("");
+  const [response, setResponse] = useState(null);
 
   const requestPost = async () => {
     const data = {
       content: text,
     };
+    setText("");
 
     try {
       const response = await axios.post(
@@ -33,77 +36,126 @@ export const AI_Question = () => {
     }
   };
 
-  return (
-    <KeyboardAwareScrollView style={styles.container}>
-      <View>
-        <Text
+  const renderResponse = () => {
+    if (response === null) {
+      return (
+        <View
           style={{
-            marginTop: 125,
-            alignSelf: "center",
-            fontSize: 19,
-            fontWeight: "bold",
-            textAlign: "center",
+            alignItems: "center",
           }}
         >
-          혹시, 아이가 알레르기가 있냥? {"\n"}
-          <Text style={{ fontSize: 6 }}>{"\n"}</Text>
-          <Text style={{ color: "#F49C1A" }}>알레르기명</Text>을 말해주라옹~
-        </Text>
-        <Text>{response ? response.data["title"] : null}</Text>
-
-        <View style={{ alignItems: "center" }}>
-          <Image
-            source={require("../assets/realize_cat.png")}
-            style={{ width: 181, height: 220, marginTop: 37 }}
-          />
-        </View>
-
-        <Text
-          style={{
-            marginTop: 20,
-            marginBottom: 85,
-            fontSize: 14,
-            textAlign: "center",
-            color: "#9A9A9A",
-          }}
-        >
-          추가로 아이의 특이사항이 있다면, 입력해주세요.
-        </Text>
-      </View>
-
-      <View>
-        <ScrollView
-          horizontal={true}
-          showsHorizontalScrollIndicator={false}
-          keyboardShouldPersistTaps="always"
-        >
-          <View
+          <Text
             style={{
-              flexDirection: "row",
-              marginLeft: 15,
+              marginTop: 160,
+              fontSize: 21,
+              fontWeight: "bold",
+            }}
+          >
+            안냥~
+          </Text>
+          <Text
+            style={{
+              marginTop: 10,
+              fontSize: 21,
+              fontWeight: "bold",
+            }}
+          >
+            궁금한 게 있냥~
+          </Text>
+        </View>
+      );
+    } else {
+      return (
+        <View
+          style={{
+            alignItems: "center",
+          }}
+        >
+          <Text
+            style={{
+              marginTop: 150,
+              fontSize: 21,
+              fontWeight: "bold",
+              textAlign: "center",
+            }}
+          >
+            {response.data["content"]}
+          </Text>
+        </View>
+      );
+    }
+  };
+
+  return (
+    <View style={styles.container}>
+      <ScrollView>
+        <View
+          style={{
+            // backgroundColor: "#ffffff",
+            height: 670,
+            alignItems: "center",
+            // justifyContent: "center",
+          }}
+        >
+          {renderResponse()}
+          <Image
+            source={require("../assets/mango_cat.png")}
+            style={{
+              marginTop: 60,
+              width: 180,
+              height: 200,
+            }}
+          />
+          <Text
+            style={{
               marginTop: 20,
-              marginBottom: 16,
-              height: 30,
+              fontSize: 15,
+              color: "#747474",
+              fontWeight: "bold",
+              textAlign: "center",
+            }}
+          >
+            망고냥이가
+            <Text
+              style={{
+                fontSize: 15,
+                color: "#6FBCC2",
+                fontWeight: "bold",
+              }}
+            >
+              {" "}
+              아이 건강관리와 복약지도
+            </Text>
+            {"\n"} 고민 해결을 도와드릴게요.
+          </Text>
+
+          <ScrollView
+            horizontal={true}
+            showsHorizontalScrollIndicator={false}
+            style={{
+              marginTop: 80,
             }}
           >
             <TouchableOpacity>
               <View
                 style={{
                   alignItems: "center",
-                  marginHorizontal: 5,
+                  justifyContent: "center",
+                  marginLeft: 10,
                   height: 24,
-                  paddingVertical: 2,
+                  width: 230,
+                  // paddingVertical: 2,
                   borderRadius: 50,
-                  backgroundColor: "#FAA629",
+                  backgroundColor: "#DFDFDF",
                 }}
               >
                 <Text
                   style={{
-                    paddingVertical: 3,
-                    paddingHorizontal: 8,
-                    fontSize: 10,
+                    // paddingVertical: 3,
+                    // paddingHorizontal: 8,
+                    fontSize: 11,
                     fontWeight: "bold",
-                    color: "white",
+                    color: "#515151",
                   }}
                 >
                   ❓ 감기 시럽약은 어떻게 먹이는 게 좋을까?
@@ -114,18 +166,19 @@ export const AI_Question = () => {
               <View
                 style={{
                   alignItems: "center",
-                  marginHorizontal: 8,
+                  justifyContent: "center",
+                  marginLeft: 10,
+                  marginRight: 10,
                   height: 24,
-                  paddingVertical: 3,
+                  width: 200,
+                  // paddingVertical: 2,
                   borderRadius: 50,
                   backgroundColor: "#DFDFDF",
                 }}
               >
                 <Text
                   style={{
-                    paddingVertical: 2,
-                    paddingHorizontal: 8,
-                    fontSize: 10,
+                    fontSize: 11,
                     fontWeight: "bold",
                     color: "#515151",
                   }}
@@ -134,51 +187,51 @@ export const AI_Question = () => {
                 </Text>
               </View>
             </TouchableOpacity>
-          </View>
-        </ScrollView>
-      </View>
-      <View style={{ elevation: 100 }}>
-        <View
-          style={{
-            width: "100%",
-            height: 85,
-            backgroundColor: "#F6F6F6",
-            elevation: 40,
-            flexDirection: "row",
-          }}
-        >
-          <Image
-            source={require("../assets/plus.png")}
-            style={{ width: 18, height: 18, marginLeft: 10, marginTop: 15 }}
-          />
+          </ScrollView>
+        </View>
+      </ScrollView>
 
-          <TextInput
-            placeholder="입력하세요."
-            placeholderTextColor={"#BCBCBC"}
-            onChangeText={setText}
-            value={text}
+      <View
+        style={{
+          width: "100%",
+          height: 50,
+          backgroundColor: "#F6F6F6",
+          elevation: 40,
+          flexDirection: "row",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        <Image
+          source={require("../assets/plus.png")}
+          style={{ width: 18, height: 18, marginLeft: 5 }}
+        />
+
+        <TextInput
+          placeholder="입력하세요."
+          placeholderTextColor={"#BCBCBC"}
+          onChangeText={setText}
+          value={text}
+          style={{
+            color: "black",
+            fontSize: 13,
+            marginLeft: 15,
+            width: 290,
+          }}
+        />
+
+        <TouchableOpacity onPress={requestPost}>
+          <Image
+            source={require("../assets/send.png")}
             style={{
-              color: "black",
-              fontSize: 13,
+              width: 30,
+              height: 30,
               marginLeft: 15,
-              marginTop: -35,
             }}
           />
-
-          <TouchableOpacity onPress={requestPost}>
-            <Image
-              source={require("../assets/send.png")}
-              style={{
-                width: 30,
-                height: 30,
-                marginLeft: 240,
-                marginTop: 8,
-              }}
-            />
-          </TouchableOpacity>
-        </View>
+        </TouchableOpacity>
       </View>
-    </KeyboardAwareScrollView>
+    </View>
   );
 };
 
@@ -187,7 +240,7 @@ export default AI_Question;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop: "10%",
+    // paddingTop: "10%",
     backgroundColor: "#F6F6F6",
   },
 });
